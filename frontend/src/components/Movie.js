@@ -118,65 +118,9 @@ export default class MovieList extends React.Component {
     )
   }
 
-  /*
-  viewUrls = event => {
-    this.setState({show_table:false});
-    this.setState({detail_table:true});
-    if (this.state.url) {
-      axios
-        .get(this.state.url+`${Number(event.target.id)}/`)
-        .then(response => {
-        const posts = response.data; 
-        console.log(response.data)
-        this.setState ({ data_list: posts.data});
-        })
-    }
-
-  }
-  deleteUrls = event => {
-
-    if (this.state.url) {
-      axios
-        .delete(this.state.url+`${Number(event.target.id)}/`)
-        .then(response => {
-        console.log(response);
-        console.log(response.data);
-        this.getDataList(this.state.url);
-
-        })
-    }
-  }
-  showListTable= () =>{
-    return(
-      <Table striped bordered hover size="sm" margin="auto">
-        <tbody>
-         {this.state.data_list.map(home => <tr>{Object.keys(home).map(function(key){return <td>{home[key]}</td>})}<Button id = {home.id}  variant="secondary" onClick={this.viewUrls}>Edit</Button><Button id = {home.id}  variant="secondary" onClick={this.deleteUrls}>Delete</Button></tr>)}
-        </tbody>
-        </Table>
-    )
-  }
-  showDetailTable= () =>{
-    return(
-      <Card style={{ width: '18rem',background: 'linear-gradient( #e1f8dc, #caf1de)'}}>
-     
-       <Card.Body>
-         <Card.Title>Detail Information</Card.Title>
-         {this.state.data_list.map(home => <form id = {home.id} onSubmit={this.handleEdit}>{Object.keys(home).map(function(key){return <label>{key}<input id ={key} type="text" name={key} value = {home[key]} /></label>})}<button type="submit">Book</button></form>)}
-                
-                 
-        </Card.Body>
-      </Card>
-    )
-  }*/
-
   
   render() {
-    //console.log(this.state.vehicles);
-    /*<Table striped bordered hover size="sm" margin="auto">
-        <tbody>
-         {this.state.data_list.map(home => <tr>{Object.keys(home).map(function(key){return <td>{home[key]}</td>})}<Button id = {home.id} value = "invoices" variant="secondary" onClick={this.editUrls}>Edit</Button></tr>)}
-        </tbody>
-        </Table>*/
+   
     return (
       
       <div className="movies">
@@ -188,11 +132,7 @@ export default class MovieList extends React.Component {
           <Button  variant="secondary" onClick={this.refreshList.bind(this)}>Search</Button>
           {this.state.show_movie?this.showDetailTable():null}
         
-       
 
-        
-        
-          
       </div>
       
 
